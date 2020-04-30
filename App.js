@@ -15,9 +15,10 @@ import {
   StatusBar,
   Linking,
 } from 'react-native';
+import Config from 'react-native-config';
 
 const App: () => React$Node = () => {
-  const environment = 'DEVELOPMENT';
+  const environment = Config.ENVIRONMENT;
 
   return (
     <>

@@ -44,7 +44,7 @@ def flipper_post_install(installer)
   end
 end
 
-target 'MyApp' do
+abstract_target 'App' do
   # Pods for MyApp
   pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
   pod 'FBReactNativeSpec', :path => "../node_modules/react-native/Libraries/FBReactNativeSpec"
@@ -76,10 +76,19 @@ target 'MyApp' do
   pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
+  pod 'react-native-config', :path => '../node_modules/react-native-config'
 
-  target 'MyAppTests' do
-    inherit! :complete
-    # Pods for testing
+  target 'MyApp' do
+    #Production-specific pods
+
+    target 'MyAppTests' do
+      inherit! :complete
+      # Pods for testing
+    end
+  end
+
+  target 'MyAppDevelopment' do
+    #Development-specific pods
   end
 
   use_native_modules!
