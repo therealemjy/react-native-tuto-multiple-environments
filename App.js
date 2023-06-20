@@ -7,14 +7,7 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  View,
-  Text,
-  StatusBar,
-  Linking,
-} from 'react-native';
+import {SafeAreaView, StyleSheet, View, Text, StatusBar} from 'react-native';
 
 const App: () => React$Node = () => {
   const environment = 'DEVELOPMENT';
@@ -27,17 +20,6 @@ const App: () => React$Node = () => {
         <View style={styles.innerContainer}>
           <Text style={styles.text}>
             Environment: <Text style={styles.environment}>{environment}</Text>
-          </Text>
-        </View>
-
-        <View style={styles.footer}>
-          <Text>
-            Brought to you by{' '}
-            <Text
-              style={styles.link}
-              onPress={() => Linking.openURL('https://peel.dating')}>
-              Peel ❤️
-            </Text>
           </Text>
         </View>
       </SafeAreaView>
@@ -58,14 +40,6 @@ const styles = StyleSheet.create({
     fontSize: 22,
   },
   environment: {
-    fontWeight: '600',
-    color: 'rgb(37, 104, 239)',
-  },
-  footer: {
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  link: {
     fontWeight: '600',
     color: 'rgb(37, 104, 239)',
   },
